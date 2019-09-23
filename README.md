@@ -2,7 +2,7 @@
 
 # Emitter
 
-Tiny javascript event emitter written with ES2019.
+Tiny(12 lines of code) javascript event emitter written with ES2019.
 This library should be transpiled by you into the version of JS that you need to support.
 A babel configuration is provided but without a .browserslistrc configuration.
 
