@@ -94,7 +94,7 @@ Receives two arguments:
 1. event name
 2. callback function that will be called with the data passed when the event is emmited.
 
-Returns a function than when called will remove the event listener, or "unbind" the callback you passed if you will.
+**Returns a function than when called will remove the event listener, or "unbind" the callback you passed if you will.**
 
 ### `emit` method
 
