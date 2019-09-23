@@ -39,3 +39,61 @@ test('Unbinding function only removes the correct function', () => {
 	unbind();
 	expect(emitter.events.test.length).toEqual(2);
 });
+
+test('Unbinded functions are not called', () => {
+	const emitter = new Emitter();
+
+	let first = false;
+	let second = false;
+	let third = false;
+
+	emitter.on('test', () => (first = true));
+	const unbind = emitter.on('test', () => (second = true));
+	emitter.on('test', () => (third = true));
+	unbind();
+
+	emitter.emit('test');
+
+	expect(first).toEqual(true);
+	expect(second).toEqual(false);
+	expect(third).toEqual(true);
+});
+
+test('Emit runs all callbacks for a specific event', () => {
+	const emitter = new Emitter();
+
+	let first = false;
+	let second = false;
+	let third = false;
+
+	emitter.on('test', () => (first = true));
+	emitter.on('test', () => (second = true));
+	emitter.on('test', () => (third = true));
+
+	emitter.emit('test');
+
+	expect(first).toEqual(true);
+	expect(second).toEqual(true);
+	expect(third).toEqual(true);
+});
+
+test('Callbacks only run when emit is called', () => {
+	const emitter = new Emitter();
+
+	let called = false;
+
+	function callback() {
+		called = true;
+	}
+
+	emitter.on('test', callback);
+	expect(called).toEqual(false);
+	emitter.emit('test');
+	expect(called).toEqual(true);
+});
+
+test("Emit doesn't throw when no callbacks are binded to an event", () => {
+	const emitter = new Emitter();
+
+	expect(() => emitter.emit('test')).not.toThrow();
+});
