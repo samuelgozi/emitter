@@ -16,7 +16,7 @@ in addition to that, many projects have dependencies for the smallest tasks like
 Thats why I decided to write small reusable libraries like this one:
 
 1. This library has no dependencies(other than for tests)
-2. Extremely small codebase(13 lines of code).
+2. Extremely small codebase(12 lines of code).
 3. thoroughly tested
 4. simple
 
@@ -24,7 +24,7 @@ I believe that all those help with security.
 
 ## Its small!
 
-Yes there are others out there that are small too, and might be better for your project like `nanoevents`.
+Yes there are others out there that are small to, and might be better for your project like `nanoevents`.
 
 I would use `nanoevents` instead of this one if you think that the output code of babel will be bigger than theirs.
 But Thats probably not going to be the case if you already use ESNext syntax in your project, because all of the polyfills will end up being in your code anyways.
@@ -38,7 +38,7 @@ So with time, when your project starts to target newer browsers, you wont need t
 
 If you are using something like `nanoevents` then it will still work, but the code will end up a little longer.
 
-I know that for most devs the differance is too small to care about, and thats fine, I just love to write code.
+I know that for most devs the difference is too small to care about, and thats fine, I just love to write code.
 
 # Can I use it in production?
 
@@ -92,7 +92,7 @@ The emitter class instance has two methods:
 Receives two arguments:
 
 1. event name
-2. callback function that will be called with the data passed when the event is emmited.
+2. callback function that will be called with the data passed when the event is emitted.
 
 **Returns a function than when called will remove the event listener, or "unbind" the callback you passed if you will.**
 
