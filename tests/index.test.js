@@ -1,4 +1,4 @@
-import Emitter from '../src/index.js';
+import Emitter from '../index.js';
 
 test('Adds callback to events with specified name', () => {
 	const emitter = new Emitter();

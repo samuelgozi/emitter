@@ -2,11 +2,11 @@
   "name": "@trice/emitter",
   "version": "1.0.0",
   "description": "Tiny javascript event emitter",
-  "main": "src/index.js",
+  "main": "index.js",
   "author": "Samuel Elgozi <samu.elgozi@gmail.com>",
   "license": "MIT",
   "files": [
-    "src"
+    "index.js"
   ],
   "scripts": {
     "test": "jest"
