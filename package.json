@@ -1,6 +1,6 @@
 {
   "name": "@trice/emitter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tiny javascript event emitter",
   "main": "index.js",
   "author": "Samuel Elgozi <samu.elgozi@gmail.com>",
