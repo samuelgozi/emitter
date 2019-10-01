@@ -42,7 +42,7 @@ I know that for most devs the difference is too small to care about, and thats f
 
 # Can I use it in production?
 
-Yes you can, we doo. Its thoroughly tested, and very small, so you probably should use it if you don't need any advanced features, but in the worst case you can extend it. its just a class, and a very simple one too.
+Yes you can, we do. Its thoroughly tested, and very small, so you probably should use it if you don't need any advanced features, but in the worst case you can extend it. its just a class, and a very simple one too.
 
 If you think that a core functionality should be added then just do a quick pull request with tests, or leave an issue.
 
