@@ -1,14 +1,16 @@
-export default class {
-	_events = {};
+export default class Emitter {
+	events = {};
 
 	on(name, cb) {
-		const eventCallbacks = (this._events[name] = this._events[name] || []);
-		this._events[name].push(cb);
-		return () => (this._events[name] = eventCallbacks.filter(fn => fn !== cb));
+		this.events[name] ? this.events[name].push(cb) : (this.events[name] = [cb]);
+
+		// Return a function to unbind the callback.
+		return () => {
+			this.events[name] = this.events[name].filter(fn => fn !== cb);
+		};
 	}
 
 	emit(name, data) {
-		if (this._events[name] === undefined) return;
-		this._events[name].forEach(cb => cb(data));
+		this.events[name] && this.events[name].forEach(cb => cb(data));
 	}
 }

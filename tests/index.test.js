@@ -7,9 +7,9 @@ test('Adds callback to events with specified name', () => {
 
 	emitter.on('test', callback);
 
-	expect(emitter._events).toHaveProperty('test');
-	expect(emitter._events.test.length).toEqual(1);
-	expect(emitter._events.test[0]).toBe(callback);
+	expect(emitter.events).toHaveProperty('test');
+	expect(emitter.events.test.length).toEqual(1);
+	expect(emitter.events.test[0]).toBe(callback);
 });
 
 test('Adding listener returns a working unbind function', () => {
@@ -23,7 +23,7 @@ test('Adding listener returns a working unbind function', () => {
 
 	unbind();
 
-	expect(emitter._events.test.length).toEqual(0);
+	expect(emitter.events.test.length).toEqual(0);
 });
 
 test('Unbinding function only removes the correct function', () => {
@@ -35,9 +35,9 @@ test('Unbinding function only removes the correct function', () => {
 	emitter.on('test', () => {});
 	emitter.on('test', () => {});
 
-	expect(emitter._events.test.length).toEqual(3);
+	expect(emitter.events.test.length).toEqual(3);
 	unbind();
-	expect(emitter._events.test.length).toEqual(2);
+	expect(emitter.events.test.length).toEqual(2);
 });
 
 test('Unbinded functions are not called', () => {
